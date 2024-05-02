@@ -106,3 +106,33 @@ function randomPass() {
     showPassElTwo.textContent += characters[randomNumTwo];
   }
 }
+
+function copyDivToClipboardOne() {
+  // Get the text from the first password display element
+  var text = document.getElementById("showPassOne").textContent;
+
+  // Copy the text to the clipboard
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert("Password 1 copied to clipboard");
+    })
+    .catch((err) => {
+      console.error("Failed to copy text: ", err);
+    });
+}
+
+function copyDivToClipboardTwo() {
+  // Get the text from the second password display element
+  var text = document.getElementById("showPassTwo").textContent;
+
+  // Copy the text to the clipboard
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert("Password 2 copied to clipboard");
+    })
+    .catch((err) => {
+      console.error("Failed to copy text: ", err);
+    });
+}
